@@ -1,32 +1,70 @@
-# 📊 Social Network Site (SNS) Data Analysis
 
-This project is an exploratory data analysis (EDA) on a Social Network Site (SNS) dataset using Python and Pandas in a Jupyter Notebook.
+# **Exploratory Data Analysis – Dealing with Null Values in Python**
 
-## 🧠 Objective
 
-To understand user demographics and behavior based on available SNS user data. The analysis includes handling missing values, exploring age and gender distributions, and preparing data for future modeling.
+This project demonstrates how to identify and handle missing values in a real-world dataset (`snsdata.csv`) using Python's pandas library.
 
-## 📁 Files Included
+---
 
-- `sns_data_analysis.ipynb` — Main Jupyter Notebook containing the analysis
-- `snsdata.csv` — Dataset file (uploaded only if it's public/non-confidential)
-- `README.md` — This readme file
+## 📁 Dataset Used
 
-## 🔍 Technologies Used
+- **snsdata.csv**: A social networking dataset containing demographic and interest-related information such as:
+  - `gender`
+  - `age`
+  - `gradyear`
+  - `friends`
+  - and other user interests.
 
-- Python 🐍
-- Pandas 📊
-- Jupyter Notebook 📓
+---
 
-## ✅ Key Analysis
+## 🔍 What This Project Covers
 
-- Handled unknown values like `'notknown'`, `'unknown'` and replaced them with `NaN`
-- Visualized gender distribution using `value_counts()`
-- Checked age distribution and other statistical metrics
-- Inspected missing data to prepare for future ML pipelines
+| Step | Description |
+|------|-------------|
+| 1️⃣ | Reading the dataset using `pandas.read_csv()` |
+| 2️⃣ | Checking for missing values using `isna()`, `isnull()` |
+| 3️⃣ | Counting missing vs non-missing values using `.sum()` |
+| 4️⃣ | Exploring complete data with `.info()` |
+| 5️⃣ | Comparing `isna()` vs `isnull()` and `notna()` vs `notnull()` |
+| 6️⃣ | Understanding the structure and memory usage of the dataset |
 
-## 📌 How to Run
+---
 
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/Sundram22/sns-data-analysis.git
+## 📌 Key Pandas Functions Explained
+
+| Function | Purpose |
+|----------|---------|
+| `isna()` | Detect missing (null) values |
+| `isnull()` | Same as `isna()` |
+| `notna()` | Detect non-missing (non-null) values |
+| `notnull()` | Same as `notna()` |
+| `.sum()` | Count how many `True` values (i.e. missing or non-missing) |
+| `.info()` | Overview of DataFrame (column types, non-null counts, memory usage) |
+
+---
+
+## 🧠 Insights You Can Gain
+
+- Which columns have missing data?
+- How many missing values exist in each column?
+- What's the total memory footprint of your dataset?
+- What's the data type of each column?
+- How to confidently clean and prepare data before model building.
+
+---
+
+## 🛠 Tools Used
+
+- **Python 3.x**
+- **Pandas**
+- **Jupyter Notebook**
+
+---
+
+## 📷 Sample Output
+
+```python
+snsdata.gender.isna().sum()   # e.g. 30 missing gender values
+snsdata.age.isna().sum()      # e.g. 45 missing age values
+cars.isnull().sum()           # Check missing in another dataset
+cars.notnull().sum()          # Count non-missing values
